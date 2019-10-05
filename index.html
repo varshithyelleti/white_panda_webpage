@@ -1,0 +1,428 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            margin: 0px;
+            height: fit-content;
+        }
+
+
+        .sidebar {
+            width: 5%;
+            height: 100%;
+            background-color: white;
+            position: fixed;
+            border-right: 2px solid rgb(231, 228, 228);
+        }
+
+        .sidebar a {
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 25px;
+            margin-bottom: 10px;
+            height: 50px;
+            top: 50%;
+            padding-top: 15px;
+
+        }
+
+
+        .active {
+            background-color: white;
+            border-right: 2.5px solid blue;
+
+        }
+
+        .main {
+            margin-left: 5%;
+            width: 95%;
+        }
+
+        .topbar {
+            height: 10%;
+            width: 100%;
+            background-color: white;
+            border-bottom: 2px solid rgb(231, 228, 228);
+        }
+
+        .bell {
+            float: right;
+            font-size: 30px;
+            margin: 20px;
+            text-align: center;
+            color: grey;
+        }
+
+        .username {
+            width: 35px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            float: right;
+            background-color: green;
+            margin-right: 100px;
+            margin-top: 16px;
+            padding-top: 4px;
+        }
+        .number{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 10px;
+            color: white;
+            text-align: center;
+            float: right;
+            background-color: red;
+            margin-right: -56px;
+            margin-top: 12px;
+            padding-top: 3px;
+        }
+        .content {
+            height: 90%;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 5%;
+        }
+
+        .Innertext {
+            height: 40%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            background-color: rgb(243, 250, 253);
+            padding-left: 2%;
+            padding-top: 0.5%;
+        }
+
+        .button1 {
+            width: 20%;
+            height: 40px;
+            color: rgb(23, 219, 187);
+            border: 1px solid rgb(23, 219, 187);
+            background-color: rgb(243, 250, 253);
+            border-radius: 5px;
+        }
+
+
+
+        .image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            float: left;
+            background-color: navy;
+            margin: 20%;
+        }
+
+        .article {
+            font-size: 20px;
+            padding-left: 20%;
+            color: grey;
+        }
+        .row{
+            padding-top:10%;
+        }
+        .col {
+            width: 30%;
+            padding: 2.5%;
+        }
+
+
+        .button2 {
+            width: 50%;
+            height: 40px;
+            color: rgb(23, 219, 187);
+            border: 1px solid rgb(23, 219, 187);
+            background-color: white;
+            border-radius: 5px;
+        }
+        .element{
+            border: 1px solid transparent;
+        }
+        .element:hover{
+            border: 1px solid rgb(243, 250, 253);
+            border-radius: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #grey;
+        }
+    </style>
+    <script>
+        var activeelement = "menu";
+        function menuclick() {
+            if (activeelement == "menu")
+                return;
+            document.getElementById(activeelement).classList.remove("active");
+            document.getElementById("menu").classList.add("active");
+            activeelement = "menu";
+        }
+        function searchclick() {
+            if (activeelement == "search")
+                return;
+            document.getElementById(activeelement).classList.remove("active");
+            document.getElementById("search").classList.add("active");
+            activeelement = "search";
+        }
+        function storeclick() {
+            if (activeelement == "store")
+                return;
+            document.getElementById(activeelement).classList.remove("active");
+            document.getElementById("store").classList.add("active");
+            activeelement = "store";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="">
+        <div class="sidebar" Id="side">
+            <a class="active optiion" id="menu" href="#" style="margin-top: 100px;" onclick="menuclick()"><i
+                    class="fa fa-home" style="color:grey;"></i></a>
+            <a href="#" class="option" id="search" onclick="searchclick()"><i class="fa fa-search"
+                    style="color: grey;"></i></a>
+            <a href="#" class="option" id="store" onclick="storeclick()"><i class="fa fa-shopping-bag"
+                    style="color: grey;"></i></a>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div style="float:left; margin:15px; text-align:center; width:25%;"><img src="image.png"></img></div>
+                <div class="username">AB</div>
+                <div class="bell"><a><i class="fa fa-bell"></i></a></div>
+                <div class="number">699</div>
+            </div>
+            <div class="content">
+                <h1>Content Store</h1>
+                <div class="Innertext">
+                    <h3 style="color:rgb(23, 219, 187);">Got bulk orders or almost similar orders ? Fill the order brief
+                        in
+                        an excel sheet</h3>
+                    <p style="color: grey">If you're wondering about an easy way to place orders in large numbers, we
+                        provide a way customized just for that.</p>
+                    <p style="color:grey">Download our excel sheet, and fill the order brief in the prescribed format
+                        and
+                        submit. In case you need any help, <a href="#" style="color:grey">we</a></p>
+                    <p><a href="#" style="color:grey">are just a click away to assist you in placing your order</a></p>
+                    <button class="button button1" type="button" onclick="alert('#')">Order via Excel Sheet
+                    </button>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image " style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Blog / Article</b><br />
+                                    from <i class="fa fa-inr"></i>500</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image" style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Newsletter / E-mailer</b><br />
+                                    from <i class="fa fa-inr"></i>1000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image" style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Whitepaper</b><br />
+                                    from <i class="fa fa-inr"></i>2000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image " style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>e-book</b><br />
+                                    from <i class="fa fa-inr"></i>1000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image" style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Report / Guide</b><br />
+                                    from <i class="fa fa-inr"></i>1000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image" style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Product Description</b><br />
+                                    from <i class="fa fa-inr"></i>500</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image " style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Website Content</b><br />
+                                    from <i class="fa fa-inr"></i>1000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image" style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Video Script</b><br />
+                                    from <i class="fa fa-inr"></i>1000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 element">
+                            <div class="image" style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Company Profile / Brochure</b><br />
+                                    from <i class="fa fa-inr"></i>2000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col2-sm-12 col2-md-4 element" style="width:30%; padding:2.5%; float:left;">
+                            <div class="image " style="float:left; margin:5px; text-align:center; width:25%;"><img
+                                    src="image2.jpg"
+                                    style="width:75%; height: 90%; padding-top:10%; border-radius: 50%"></img>
+                            </div>
+                            <div class="article">
+                                <p><b>Press Release</b><br />
+                                    from <i class="fa fa-inr"></i>2000</p>
+                            </div>
+                            <div>
+                                <p style="color:grey">Typically 450-400 words, an e-book is <br /> perfect for your
+                                    target
+                                    audience
+                                    ranging<br />from prospective customers to users</p>
+                            </div>
+                            <button class="button button2" type="button" onclick="alert('#')">Order</button>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div class="footer">
+                            <a href="#" style="padding:0 40px 0 0;color:grey;font-size:40px"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="#" style="padding:0 40px 0 0;color:grey;font-size:40px"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <a href="#" style="padding:0 40px 0 0;color:grey;font-size:40px"><i
+                                    class="fa fa-instagram"></i></a>
+                            <a href="#" style="padding:0 40px 0 0;color:grey;font-size:40px"><i
+                                    class="fa fa-facebook"></i></a>
+                            <p>Copyright @ 2019 White Panda Media Pvt.Ltd.</p>
+                            <p>All rights reserved</p>
+                            <p><u>Privacy policy</u> | <u>Terms of service </u> | <u>Service Agreement</u> | <u>Contact
+                                    us</u></p>
+                        </div>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
